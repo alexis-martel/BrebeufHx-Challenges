@@ -1,0 +1,60 @@
+:root {
+  background-color: aliceblue;
+}
+
+html {
+  max-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px;
+}
+
+article {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  gap: 8px;
+}
+
+textarea {
+  resize: horizontal;
+  width: 300px;
+  font-family: monospace;
+  min-width: 60%;
+}
+
+div#game-wrapper {
+  flex-grow: 1;
+}
+
+div#game {
+  height: 100%;
+}
+
+canvas {
+  image-rendering: pixelated;
+  border: solid;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+iframe {
+  width: 100%;
+}
