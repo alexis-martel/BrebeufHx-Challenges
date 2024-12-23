@@ -1,60 +1,124 @@
 :root {
-  background-color: aliceblue;
+  font-family: "Arimo", system-ui;
+  font-weight: 400;
+  /* -- */
 }
 
 html {
-  max-height: 100vh;
-  height: 100vh;
-  box-sizing: border-box;
+  height: 100vh !important;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  box-sizing: border-box;
   margin: 0;
   padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+body > * {
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 article {
-  flex-grow: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Contrail One";
+  font-weight: normal;
+}
+
+h1 {
+  font-size: x-large;
+  margin: 0;
+  align-self: center;
+}
+
+noscript {
+  background-color: red;
+  color: white;
+}
+
+header {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
+  justify-content: space-between;
+}
+
+header img {
+  height: 55px;
+}
+
+header nav {
+  max-height: min-content;
+  align-self: center;
+}
+
+canvas {
+  background-color: black;
+}
+
+article {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  flex-grow: 1;
   gap: 8px;
 }
 
-textarea {
-  resize: horizontal;
-  width: 300px;
+div#code-editor {
+  border: solid;
   font-family: monospace;
-  min-width: 60%;
+  resize: inline;
+  width: 77%;
+  flex-shrink: 0;
+  overflow: scroll;
+  min-width: 111px;
+  max-width: calc(100vw - 200px);
 }
 
 div#game-wrapper {
   flex-grow: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+div#game-wrapper aside > *:not(progress) {
+  display: inline;
+  margin-inline: 8px;
 }
 
 div#game {
   height: 100%;
+  overflow: scroll;
+  padding-right: 16px;
 }
 
-canvas {
-  image-rendering: pixelated;
-  border: solid;
+input[type="button"],
+input[type="submit"] {
+  background-color: transparent;
+  border: 1px solid CanvasText;
+  border-radius: 8px;
+}
+
+input[type="submit"] {
+}
+
+progress {
   width: 100%;
-  box-sizing: border-box;
-  background-color: black;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-}
-
-iframe {
-  width: 100%;
+section#documentation {
+  min-height: 22px;
 }

@@ -1,56 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
-
   <head>
-  <title>BrébeufHx 8.0</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
+    <title>Défis BrébeufHx 8.0</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <base href="/BrebeufHx-Games/" />
+    <!-- Import fonts from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Contrail+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
+    <noscript
+      >Veuillez activer JavaScript pour utiliser cette plateforme.</noscript
+    >
     <header>
-      <h1>BrébeufHx 8.0</h1>
-      <hr>
+      <a href="#"><img src="images/branding/logotype.png" alt="Logo" /></a>
+      <h1>Défis</h1>
       <nav>
-        <a>✍️ Éditeur</a>
-        <a>❓ Aide</a>
-        <a>📖 Documentation</a>
-        <a>📏 Règles</a>
+        <a href="#">❓ Aide</a>
+        <a href="#">📏 Règles</a>
       </nav>
-      <hr>
     </header>
+    <hr />
     <article>
-      <textarea>// Commence par importer blablabla...</textarea>
+      <div id="code-editor" contenteditable="true"
+        >// Commence par importer blablabla...</div
+      >
       <div id="game-wrapper">
         <div id="game">
-          <nav>
-            <button>💾 Enregistrer</button>
-            <button>📂 Ouvrir</button>
-            <button>🏁 Go</button>
-            <button>🛑 Stop</button>
-            <button>🎮 Plein écran</button>
-          </nav>
-          <hr>
-          <canvas width="64" height="64">Ce navigateur ne prend pas en charge Canvas.</canvas>
-          <hr>
-          <nav>
-            <div>
-              <button>←</button>
-              <button>↑</button>
-              <button>↓</button>
-              <button>→</button>
-            </div>
-            <div>
-              <button>🅰️</button>
-              <button>🅱️</button>
-            </div>
-          </nav>
-          <hr>
+          <aside>
+            <p>Défi X/15</p><hr /><p>Niveau X/3</p>
+            <progress></progress>
+          </aside>
+          <hr />
+          <form id="">
+            <input type="button" value="🏁 Go!" />
+            <input type="button" value="🛑 Stop!" />
+            <input type="button" value="🗑️ Réinitialiser…" />
+            <input type="submit" value="✅ Valider!" />
+          </form>
+          <hr />
+          <canvas width="64" height="64"
+            >Ce navigateur ne prend pas en charge Canvas.</canvas
+          >
+          <hr />
           <h2>Documentation</h2>
-          <iframe></iframe>
+          <section id="documentation">
+            <h3>Section 1</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 2</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 3</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 4</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 5</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 6</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 7</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+            <h3>Section 8</h3>
+            <p
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            >
+          </section>
         </div>
       </div>
     </article>
   </body>
-  
 </html>
