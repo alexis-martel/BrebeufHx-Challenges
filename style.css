@@ -65,6 +65,19 @@ header nav {
 
 canvas {
   background-color: black;
+  image-rendering: pixelated;
+  width: 100%;
+}
+
+output {
+  box-sizing: border-box;
+  padding: 1ch;
+  background-color: black;
+  color: white;
+  resize: vertical;
+  /* overflow-y: scroll; */
+  width: 100%;
+  display: block;
 }
 
 article {
@@ -77,15 +90,16 @@ article {
   gap: 8px;
 }
 
-div#code-editor {
-  border: solid;
-  font-family: monospace;
+textarea,
+div#codemirror-wrapper {
   resize: inline;
   width: 77%;
   flex-shrink: 0;
-  overflow: scroll;
   min-width: 111px;
   max-width: calc(100vw - 200px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 22px;
 }
 
 div#game-wrapper {
@@ -101,8 +115,13 @@ div#game-wrapper aside > *:not(progress) {
 
 div#game {
   height: 100%;
-  overflow: scroll;
-  padding-right: 16px;
+  overflow-y: scroll;
+}
+
+form {
+  position: sticky;
+  top: 0px;
+  background-color: blue;
 }
 
 input[type="button"],

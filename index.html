@@ -24,12 +24,13 @@
       <nav>
         <a href="#">❓ Aide</a>
         <a href="#">📏 Règles</a>
+        <a href="#">ℹ️ À Propos</a>
       </nav>
     </header>
     <hr />
     <article>
-      <div id="code-editor" contenteditable="true"
-        >// Commence par importer blablabla...</div
+      <textarea>
+lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </textarea
       >
       <div id="game-wrapper">
         <div id="game">
@@ -38,16 +39,19 @@
             <progress></progress>
           </aside>
           <hr />
-          <form id="">
+          <form id="challenge-control-buttons">
             <input type="button" value="🏁 Go!" />
             <input type="button" value="🛑 Stop!" />
             <input type="button" value="🗑️ Réinitialiser…" />
             <input type="submit" value="✅ Valider!" />
           </form>
           <hr />
+          <h2>Écran</h2>
           <canvas width="64" height="64"
             >Ce navigateur ne prend pas en charge Canvas.</canvas
           >
+          <h2>Console</h2>
+          <pre><output>Hello, World!</output></pre>
           <hr />
           <h2>Documentation</h2>
           <section id="documentation">
@@ -135,5 +139,6 @@
         </div>
       </div>
     </article>
+    <script src="editor.js"></script>
   </body>
 </html>
