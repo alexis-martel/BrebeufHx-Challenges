@@ -12,6 +12,30 @@
       href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Contrail+One&display=swap"
       rel="stylesheet"
     />
+    <!-- Imports for CodeMirror-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/lib/codemirror.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/lib/codemirror.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/mode/python/python.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/addon/display/placeholder.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/addon/edit/closebrackets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.0/addon/edit/matchbrackets.js"></script>
+    <!-- Imports for Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
+    <!-- Console override -->
+    <script>
+      let console = {};
+      console.log = function (msg) {
+        document.getElementById("console").innerHTML += msg + "<br>";
+      };
+      console.error = function (msg) {
+        document.getElementById("console").innerHTML +=
+          `<span style="color: lightcoral;">${msg}</span>` + "<br>";
+      };
+    </script>
   </head>
 
   <body>
@@ -29,29 +53,38 @@
     </header>
     <hr />
     <article>
-      <textarea>
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </textarea
-      >
+      <div id="codemirror-wrapper"></div>
       <div id="game-wrapper">
         <div id="game">
           <aside>
-            <p>Défi X/15</p><hr /><p>Niveau X/3</p>
-            <progress></progress>
+            <p id="challenge-stat"></p><hr id="inline-hr" /><p
+              id="level-stat"
+            ></p>
+            <progress id="progress-bar" max="1" value="0"></progress>
+            <nav>
+              <select id="challenge-picker"></select>
+            </nav>
           </aside>
           <hr />
-          <form id="challenge-control-buttons">
-            <input type="button" value="🏁 Go!" />
-            <input type="button" value="🛑 Stop!" />
-            <input type="button" value="🗑️ Réinitialiser…" />
-            <input type="submit" value="✅ Valider!" />
-          </form>
-          <hr />
-          <h2>Écran</h2>
-          <canvas width="64" height="64"
-            >Ce navigateur ne prend pas en charge Canvas.</canvas
-          >
-          <h2>Console</h2>
-          <pre><output>Hello, World!</output></pre>
+          <div id="code-controls">
+            <form id="code-actions">
+              <select id="language-selector">
+                <optgroup label="Langage">
+                  <option value="js">JavaScript</option>
+                  <option value="py">Python</option>
+                </optgroup>
+              </select>
+              <input type="button" value="💾 Enregistrer" id="save" />
+              <input type="button" value="🏁 Go!" id="run" />
+              <input type="submit" value="✅ Valider!" />
+              <hr />
+            </form>
+            <h2>Console</h2>
+            <output id="console"></output>
+            <hr />
+          </div>
+          <h2>Question</h2>
+          <p id="question-text"></p>
           <hr />
           <h2>Documentation</h2>
           <section id="documentation">
@@ -140,5 +173,31 @@ lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
       </div>
     </article>
     <script src="editor.js"></script>
+    <dialog open>
+      <h2>Aide</h2>
+      <p>Bienvenue à la plateforme des défis débutants de BrébeufHx 8.0!</p>
+      <p
+        >Il y a XX défis, répartis sur 3 niveaux de difficulté. La progression
+        de difficulté suivra ce modèle:</p
+      >
+      <ol>
+        <li
+          >Des défis visant à donner une base aux les novices, et pour se
+          réchauffer. Les tâches consisteront en l'utilisation simple de
+          concepts de base de la programmation.</li
+        >
+        <li>
+          L'introduction de nouveaux concepts réitérant sur ceux du niveau 1
+        </li>
+        <li
+          >Des défis qui feront appel à un raisonnement mathématique, qui
+          devront être résolus avec les concepts des deux niveaux précédents.
+        </li>
+      </ol>
+      <h2>Bonne chance!!!</h2>
+      <form method="dialog">
+        <input type="submit" value="❌ Fermer" />
+      </form>
+    </dialog>
   </body>
 </html>

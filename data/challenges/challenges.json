@@ -1,0 +1,43 @@
+{
+  "L1": [
+    {
+      "prompts": [
+        "Affiche 4 a la console",
+        "Affiche 2 a la console",
+        "Affiche 6 a la console",
+        "Affiche 8 a la console",
+        "Affiche 10 a la console",
+        "Affiche 12 a la console"
+      ],
+      "answers": ["4", "2", "6", "8", "10", "12"]
+    },
+    {
+      "prompts": ["Hello everyone c2l1", "Hec2l1 second"],
+      "answers": ["a\nr", "a\nr"]
+    },
+    {
+      "prompts": ["Hello everyone c2l1", "Hec2l1 second"],
+      "answers": ["akjshasf", "second answer"]
+    }
+  ],
+  "L2": [
+    {
+      "prompts": ["Hello everyone c1l2", "Hec1l2 second"],
+      "answers": ["sdfd", "second answer"]
+    },
+    {
+      "prompts": ["Hello everyone c2l2", "Hec2l2 second"],
+      "answers": ["dsfdff", "second answer"]
+    }
+  ],
+  "L3": [
+    {
+      "prompts": ["Hello everyone c1l3", "Hec1l3 second"],
+      "answers": ["332", "second answerHec1l3"]
+    },
+    {
+      "prompts": ["Hello everyone c2l3", "Hec2l3 second"],
+      "answers": ["66", "second answer"]
+    }
+  ]
+}

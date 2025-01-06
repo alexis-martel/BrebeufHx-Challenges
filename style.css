@@ -1,11 +1,22 @@
 :root {
   font-family: "Arimo", system-ui;
   font-weight: 400;
-  /* -- */
+  --background: #ffffff;
+  --background-alt: #e3efff;
+  --background-accent: #9bcbf8;
+  --foreground: #051d40;
+  --foreground-alt-1: #145da0;
+  --foreground-alt-2: #b1d4e0;
+}
+
+*:disabled {
+  cursor: not-allowed;
 }
 
 html {
   height: 100vh !important;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 body {
@@ -20,6 +31,10 @@ body {
 body > * {
   width: 100%;
   flex: 0 0 auto;
+}
+
+hr {
+  border: 1px solid var(--foreground);
 }
 
 article {
@@ -63,21 +78,24 @@ header nav {
   align-self: center;
 }
 
-canvas {
-  background-color: black;
-  image-rendering: pixelated;
-  width: 100%;
-}
-
 output {
+  word-wrap: anywhere;
   box-sizing: border-box;
   padding: 1ch;
-  background-color: black;
-  color: white;
+  font-family: monospace;
+  background-color: var(--foreground);
+  color: var(--background);
   resize: vertical;
-  /* overflow-y: scroll; */
+  overflow: scroll;
   width: 100%;
   display: block;
+  min-height: 8ch;
+  max-height: 16ch;
+}
+
+output:empty:before {
+  content: "Console BrébeufHx";
+  color: var(--foreground-alt-1);
 }
 
 article {
@@ -108,9 +126,12 @@ div#game-wrapper {
   box-sizing: border-box;
 }
 
-div#game-wrapper aside > *:not(progress) {
+div#game-wrapper aside > *:not(progress, select) {
   display: inline;
-  margin-inline: 8px;
+}
+
+hr#inline-hr {
+  margin-inline: 11px;
 }
 
 div#game {
@@ -118,26 +139,54 @@ div#game {
   overflow-y: scroll;
 }
 
-form {
+div#code-controls {
   position: sticky;
   top: 0px;
-  background-color: blue;
+  background-color: var(--background);
+}
+
+p#question-text {
+  background-color: var(--background-alt);
+  padding: 4px;
+  border: 2px dotted var(--foreground-alt-1);
 }
 
 input[type="button"],
-input[type="submit"] {
-  background-color: transparent;
-  border: 1px solid CanvasText;
-  border-radius: 8px;
+input[type="submit"],
+button {
+  background-color: var(--background-alt);
+  border: none;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 4px;
+  cursor: pointer;
 }
 
 input[type="submit"] {
+  background-color: var(--background-accent);
 }
 
 progress {
   width: 100%;
+  accent-color: var(--foreground-alt-1);
+}
+
+nav select {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 section#documentation {
   min-height: 22px;
+}
+
+.CodeMirror {
+  height: auto !important;
+}
+
+dialog {
+  z-index: 3333;
+  max-width: 444px;
+  border: 2px solid var(--foreground);
+  box-shadow: 7px 7px 88px 1px var(--foreground);
 }
