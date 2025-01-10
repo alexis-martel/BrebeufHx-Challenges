@@ -37,6 +37,10 @@ hr {
   border: 1px solid var(--foreground);
 }
 
+a:visited {
+  color: LinkText;
+}
+
 article {
   flex: 1 1 auto;
   min-height: 0;
@@ -108,7 +112,6 @@ article {
   gap: 8px;
 }
 
-textarea,
 div#codemirror-wrapper {
   resize: inline;
   width: 77%;
@@ -118,6 +121,13 @@ div#codemirror-wrapper {
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 22px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  min-height: 99px;
 }
 
 div#game-wrapper {
@@ -149,6 +159,13 @@ p#question-text {
   background-color: var(--background-alt);
   padding: 4px;
   border: 2px dotted var(--foreground-alt-1);
+  word-wrap: anywhere;
+}
+
+p#console-help {
+  background-color: var(--background-alt);
+  padding: 4px;
+  border: 2px dotted var(--foreground-alt-1);
 }
 
 input[type="button"],
@@ -177,7 +194,7 @@ nav select {
 }
 
 section#documentation {
-  min-height: 22px;
+  word-wrap: anywhere;
 }
 
 .CodeMirror {
@@ -189,4 +206,10 @@ dialog {
   max-width: 444px;
   border: 2px solid var(--foreground);
   box-shadow: 7px 7px 88px 1px var(--foreground);
+}
+
+p#submit-help {
+  background-color: var(--background-alt);
+  padding: 4px;
+  border: 2px dotted var(--foreground-alt-1);
 }

@@ -1,9 +1,7 @@
 let editor;
 
 document.addEventListener("DOMContentLoaded", function () {
-  const codeMirrorWrapper = document.getElementById("codemirror-wrapper");
-
-  // Initialize CodeMirror with basic setup and JavaScript mode
+  const codeMirrorWrapper = document.getElementById("codemirror-wrapper"); //Initialize CodeMirror with basic setup and JavaScript mode
   editor = CodeMirror(codeMirrorWrapper, {
     mode: "javascript", // JavaScript mode
     lineNumbers: true, // Show line numbers
@@ -48,22 +46,31 @@ function populate(data) {
       code: "",
       attempts: 0,
       solved: false,
-      variation: 0,
     };
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < data[`L${i + 1}`].length; j++) {
         // Choose variation
-        let thisChallengeModel = challengeModel;
-        thisChallengeModel.variation = Math.floor(
+        let thisChallengeModel = structuredClone(challengeModel);
+        thisChallengeModel["variation"] = Math.floor(
           Math.random() * data[`L${i + 1}`][j]["prompts"].length
         );
         progressModel[`L${i + 1}`].push(thisChallengeModel);
       }
     }
-
     localStorage.setItem("progress-model", JSON.stringify(progressModel));
+    localStorage.setItem(
+      "progress-model-unmodified",
+      JSON.stringify(progressModel)
+    );
     window.location.reload();
   } else {
+    // Show help if no progress has been made
+    if (
+      localStorage.getItem("progress-model") ===
+      localStorage.getItem("progress-model-unmodified")
+    ) {
+      document.getElementById("help").showModal();
+    }
     // Load the current challenge
     challengeIndex = parseInt(localStorage.getItem("ch-index"), 10);
     levelNum = parseInt(localStorage.getItem("lv-num"), 10);
@@ -89,10 +96,12 @@ function populate(data) {
       progress[levelName][challengeIndex]["variation"]
     ];
   // Show question in question box
-  document.getElementById("question-text").textContent =
-    data[levelName][challengeIndex]["prompts"][
-      progress[levelName][challengeIndex]["variation"]
-    ];
+  document.getElementById("question-text").innerHTML = data[levelName][
+    challengeIndex
+  ]["prompts"][progress[levelName][challengeIndex]["variation"]].replace(
+    "\n",
+    "<br>"
+  );
   // Show code in CodeMirror
   editor.setValue(progress[levelName][challengeIndex]["code"]);
   // Show progress
@@ -100,8 +109,18 @@ function populate(data) {
   document.getElementById("challenge-stat").textContent = `Défi ${
     challengeIndex + 1
   }/${data[levelName].length}`;
-  document.getElementById("progress-bar").value =
-    (challengeIndex + 1) / (data[levelName].length + 1);
+  // Calculate progress bar value
+  let solvedCount = 0;
+  let totalCount = 0;
+  for (let challenge of progress["L1"]
+    .concat(progress["L2"])
+    .concat(progress["L3"])) {
+    if (challenge["solved"]) {
+      solvedCount += 1;
+    }
+    totalCount += 1;
+  }
+  document.getElementById("progress-bar").value = solvedCount / totalCount;
   // Set language mode
   document.getElementById("language-selector").value =
     localStorage.getItem("lang-mode");
@@ -178,20 +197,21 @@ function run(lang) {
 }
 
 document.getElementById("code-actions").onsubmit = (e) => {
-  e.preventDefault();
-  saveEditorContents();
-  document.getElementById("console").innerHTML = "";
-  run(document.getElementById("language-selector").value);
   // Check answer
   if (
-    document.getElementById("console").textContent.trim() ===
-    answer.replace("\n", "").trim()
+    document
+      .getElementById("console")
+      .textContent.replace("\n", "")
+      .trim()
+      .toLowerCase() === answer.replace("\n", "").trim().toLowerCase()
   ) {
     alert("Bonne réponse!");
     let progress = JSON.parse(localStorage.getItem("progress-model"));
     progress[levelName][challengeIndex]["solved"] = true;
     localStorage.setItem("progress-model", JSON.stringify(progress));
     window.location.reload();
+  } else {
+    alert("Mauvaise réponse…");
   }
 };
 
@@ -227,6 +247,34 @@ document.getElementById("challenge-picker").onchange = (e) => {
   localStorage.setItem("ch-index", ch_index);
   window.location.reload();
 };
+
+document.getElementById("submit-report").onclick = (e) => {
+  document.getElementById("report").showModal();
+  document.getElementById("report-textarea").value =
+    "-----BEGIN REPORT-----\n" +
+    btoa(localStorage.getItem("progress-model")) +
+    "\n-----END REPORT-----";
+};
+
+document.getElementById("get-help").onclick = () => {
+  document.getElementById("help").showModal();
+};
+
+document.getElementById("get-about").onclick = () => {
+  document.getElementById("about").showModal();
+};
+
+document.addEventListener("paste", function () {
+  let progress = JSON.parse(localStorage.getItem("progress-model"));
+  progress[levelName][challengeIndex]["pasteEvents"] += 1;
+  localStorage.setItem("progress-model", JSON.stringify(progress));
+});
+
+document.addEventListener("blur", function () {
+  let progress = JSON.parse(localStorage.getItem("progress-model"));
+  progress[levelName][challengeIndex]["exitEvents"] += 1;
+  localStorage.setItem("progress-model", JSON.stringify(progress));
+});
 
 async function fetchJSON(uri) {
   const response = await fetch(uri);

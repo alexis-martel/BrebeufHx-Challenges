@@ -46,9 +46,9 @@
       <a href="#"><img src="images/branding/logotype.png" alt="Logo" /></a>
       <h1>Défis</h1>
       <nav>
-        <a href="#">❓ Aide</a>
-        <a href="#">📏 Règles</a>
-        <a href="#">ℹ️ À Propos</a>
+        <button id="submit-report">🧾 Soumettre Rapport</button>
+        <button id="get-help">❓ Aide</button>
+        <button id="get-about">ℹ️ À Propos</button>
       </nav>
     </header>
     <hr />
@@ -76,7 +76,7 @@
               </select>
               <input type="button" value="💾 Enregistrer" id="save" />
               <input type="button" value="🏁 Go!" id="run" />
-              <input type="submit" value="✅ Valider!" />
+              <input type="submit" value="✅ Valider" />
               <hr />
             </form>
             <h2>Console</h2>
@@ -88,94 +88,399 @@
           <hr />
           <h2>Documentation</h2>
           <section id="documentation">
-            <h3>Section 1</h3>
+            <h3>Affichage à la console</h3>
+            <p>
+              La plupart du temps en programmation, ce qu'on code n'est pas
+              visible à l'utilisateur. Pour faire en sorte que le user puisse
+              voir certaines informations, il faut faire un affichage à la
+              console. C'est ce que va faire la méthode
+              <kbd>console.log()</kbd>. Il existe dans JavaScript plusieurs
+              mot-clés déjà implémentés, qu'on peut utiliser pour faciliter
+              notre code. L'objet <kbd>console</kbd> en fait partie. En appelant
+              <kbd>console.log()</kbd>, on peut faire un affichage à la console.
+              Ce qui est affiché sera seulement ce qui se situe à l'intérieur
+              des parenthèses.
+            </p>
+            <h3>Types de données</h3>
             <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+              >Dans Javascript, il existe ce qu'on appelle des "types de
+              données". C'est un façon de différencier certaines données. Par
+              exemple, un chiffre n'est pas la même chose qu'une lettre de
+              l'alphabet. Voici donc les 7 types de données possible en
+              Javascript: - String: Une chaîne de lettres, comme une phrase, ou
+              simplement une seule lettre. Ils doivent être encadrés par des
+              single-quote ou double-quotes. Ex.: "Hello", "3457/$*(75",
+              'Bonjour!', "Mon nom est Étienne!". Il n'y a pas de grandes
+              différences entre single-quote ou double-quotes, donc c'est plus
+              une question de préférence. - Number: N'importe quel nombre,
+              incluant les décimaux: 4, 148, 523895, 23.4456. - Boolean: Une
+              donnée qui ne peut prendre que deux valeurs: vrai ou faux. Pour
+              faire appel à ce type de donnée, il faut tout simplement écrire
+              "true" ou "false", SANS les quotes. - BigInt: N'importe quel
+              nombre plus grand que 2^53-1 ou plus petit que -(2^53-1). Pour
+              l'instant, on ne se préoccupera pas de ce type de donnée. - Null:
+              Représente l'absence de donnée. Représenté par le mot-clé "null",
+              SANS les quotes. - Undefined: Similaire à null, sauf que
+              "undefined" signifie qu'une valeur donnée n'existe pas. Représenté
+              par le mot-clé "undefined", SANS les quotes. - Symbol: Pas
+              nécessaire pour le module débutant. - Object: Collection de
+              données qui sont liés.</p
             >
-            <h3>Section 2</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Commentaires</h3>
+            <p>
+              Il est parfois utile de mettre des commentaires dans les lignes de
+              code. C'est commentaires sont souvent là pour aider à mieux
+              comprendre un code ou encore à se rappeller ce qu'une certaine
+              partie du code fait. En JavaScript, il existe deux façons
+              d'ajouter un commentaire dans le code: en utilisant // ou /**/.
+              //: Commentaire "single-line". Par exemple: //Ceci est un
+              commentaire single-line. /**/: Commentaire "multi-lignes". Par
+              exemple: /*Ceci est un commentaire multi- lignes. */ Bien sûr,
+              tout ce qui se retrouve à l'intérieur des commentaires ne sera pas
+              exécuté par le code. Je pourrais donc écrire:
+              //console.log("Salut!") et cette chaîne ne sera pas affichée à la
+              console.</p
             >
-            <h3>Section 3</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Opérateurs arithmétiques de base</h3>
+            <p>
+              + : Opérateur d'addition, additionne deux ou plusieurs nombres;
+              console.log(3 + 4) afficherait 7. - : Opérateur de soustraction,
+              soustrait deux ou plusieurs nombres; console.log(10 - 3)
+              afficherait 7. * : Opérateur de multiplication, multiplie deux ou
+              plusieurs nombres; console.log( 4 * 6) afficherait 24. / :
+              Opérateur de division, divise deux ou plusieurs nombres;
+              console.log(81 / 9) afficherait 9. %: Opérateur modulo. Retourne
+              le reste d'une division entière. Par exemple, console.log(35 % 3)
+              afficherait 2, car 3 rentre 11 fois dans 35, avec un reste de
+              2.</p
             >
-            <h3>Section 4</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Concaténation</h3>
+            <p>
+              Outre que pour l'addition, l'opérateur arithmétique d'addition,
+              "+", peut aussi joindre deux chaînes ensembles. C'est ce qu'on
+              appelle la concaténation. Par exemple, si je voulais joindre et
+              afficher la phrase "Salut" et "Kevin", l'opération serait la
+              suivante: console.log("Salut" + " Kevin"). Remarquez que dans ce
+              cas, j'ai ajouté un espace avant la chaîne "Kevin". C'est pour
+              éviter que la chaîne affichée soit "SalutKevin".</p
             >
-            <h3>Section 5</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Caractères réservés dans une chaîne</h3>
+            <p>
+              Un des cas très communs, c'est l'utilisation des single-quotes ou
+              double-quotes dans une chaîne de commentaire. Par exemple:
+              console.log("Le mot "hello" signifie "salut" en englais."); Le
+              problème, c'est que chacun des double-quote signifie le début ou
+              la fin de la chaîne. Donc, "hello" et "salut" ne feraientt pas
+              partie de la chaîne. Pour régler ce problème, il suffit d'utiliser
+              le backward slash (\). Ce caractère n'est PAS affiché à la console
+              et enlève la fonction du caractère qui le suit: console.log("Le
+              mot \"hello\" signifie \"salut\" en englais"); Ceci affichera tout
+              correctement, incluant les "".</p
             >
-            <h3>Section 6</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Propriété .length</h3>
+            <p>
+              La propriété ".length" est une propriété du type de donnée
+              "string". C'est une propriété qui prend la chaîne à laquelle elle
+              est affectée et renvoie la longueur de la chaîne. Pour utiliser
+              cette propriété, il suffit de joindre ".length" (SANS les quotes"
+              à la chaîne qu'on veut évaluer. Par exemple, console.log("Je
+              m\'appelle Rayan".length) renvoie 17.</p
             >
-            <h3>Section 7</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Méthode .toUpperCase() et .toLowerCase()</h3>
+            <p>
+              Similaire au propriétés d'un type de donnée, JavaScript fournit
+              aussi des méthodes déjà conçues. Pour faire appel à ces méthodes,
+              il y a trois étapes: - Utiliser l'opérateur point (.) - Écrire le
+              nom de la méthode - Finir avec des parenthèses (). .toUpperCase()
+              renvoie la chaîne à laquelle la méthode est liée en majuscule:
+              console.log("hello".toUpperCase()) renvoie HELLO. .toLowerCase()
+              fait la même chose, sauf qu'elle renvoie la chaîne toute en
+              minuscule.</p
             >
-            <h3>Section 8</h3>
-            <p
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p
+            <h3>Méthode .trim()</h3>
+            <p>
+              La méthode .trim() renvoie la chaîne à laquelle la méthode est
+              liée et élimine tous les espace vides AVANT et APRÈS la chaîne.
+              Par exemple: console.log(" beaucoup d'espaces ".trim()) renvoie
+              "beaucoup d'espaces".</p
+            >
+            <h3>Méthodes "Math"</h3>
+            <p>
+              L'objet Math, tout comme l'objet console, contient plusieurs
+              méthodes utiles. En voici la liste:
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math"
+                >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</a
+              ></p
+            >
+            <h3>Méthodes "Number"</h3>
+            <p>
+              L'objet Number, tout comme l'objet console, contient plusieurs
+              méthodes utiles. En voici la liste:
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+                >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number</a
+              ></p
+            >
+            <h3>Camel Casing et Affichage</h3>
+            <p>
+              Lorsque l'on crée une variable en JavaScript, c'est une bonne
+              habitude de faire du "Camel Casing". Cela veut dire de commencer
+              la variable avec une lettre minuscule, puis chacun des prochains
+              mots commence avec une lettre majuscule. Par exemple: let
+              voiciUnExempleDeCamelCasing; Pour faire un affichage qui affiche
+              la valeur assignée à la variable, il suffit d'y faire appel
+              direct, sans le mot-clé devant ("let") et SANS quotes:
+              console.log(voiciUnExempleDeCamelCasing); Il est important de
+              noter que JavaScript est "case-sensitive", c'est à dire que la
+              variable "variableminuscule" et la variable "variableMinuscule" ne
+              sont PAS LA MÊME. C'est pourquoi il est de mauvais goût de nommer
+              plusieurs variables de façon similaire. DE PLUS, TRÈS IMPORTANT!
+              Une variable ne PEUT PAS commencer par un chiffre: let 123hello;
+              //Provoque une erreur.</p
+            >
+            <h3>Types de variable</h3>
+            <p>
+              Pour simplifier les choses, on utilisera seulement les mots-clés
+              “let” et “const”. (Si vous voulez plus de détails sur le mot-clé
+              “var” et l’histoire de “let” et “const”, lire sur ES6.) "let" et
+              "const" sont tous les deux des mots réservés, soit des mots-clés.
+              Ceux-ci sont utilisés lorsqu'on définit une variable POUR LA
+              PREMIÈRE FOIS. Il est inutile de nommer la même variable deux fois
+              avec le mot-clé: let hello; let hello; Ceci provoquera une erreur.
+              De plus, on peut assigner une valeur à une variable en utilisant
+              l'opérateur "=": let hello = "Salut!"; console.log(hello); La
+              console affichera "Salut!". let: Une variable de type "let" permet
+              au programmeur de changer la valeur assignée à la variable. Par
+              exemple: let variableQuiChange = 3; variableQuiChange = "hello";
+              console.log(variableQuiChange); La console affichera "hello".
+              const: Une variable de type "const" ne peut être assignée une
+              valeur qu'une seule fois. Elle NE PEUT PAS être modifiée! Par
+              exemple: const variableInvariable = true; variableInvariable =
+              false; Ce code n'exécutera pas, car il y aura une erreur et la
+              console affichera l'erreur.
+            </p>
+            <h3>Opérations de variables</h3>
+            <p>
+              Tout comme les nombres, il est possible d'effectuer des opérations
+              avec des variables qui contiennent des nombres. Par exemple: let
+              var1 = 3; let var2 = 5; console.log(var1 + var2); //Donne 8.
+              console.log(var2 - var1); //Donne 2. console.log(var2 * var1);
+              //Donne 15. et bien sûr, cela fonctionne avec l'opérateur de
+              division et de modulo. Opérateurs d'attribution mathématiques: Il
+              est parfois plus simple, au lieu de devoir créer deux variables
+              différentes, de simplement faire une addition à une seule
+              variable. C'est une façon de modifier une variable. Pour cela, il
+              existe le +=, -=, *= et /=. La notation va comme suit: let var1 =
+              3; var1 += 5; //Donne 8. var1 -= 4; //Donne -1. var1 *= 5 //Donne
+              15. var1 /= 3 //Donne 1. On peut aussi utiliser "+=" pour
+              "concaténer" des chaînes ensemble: let varChaîne = ""; varChaîne
+              += "hello"; console.log(varChaîne); La console affichera "hello",
+              car j'ai "additionné "hello" à la chaîne vide initiale.
+            </p>
+            <h3>Incrémentation et décrémentation</h3>
+            <p>
+              L'incrémentation et la décrémentation seront des opérations très
+              utiles plus tard dans les structures de contrôle. Pour l'instant,
+              familiarisez-vous avec son utilisation: ++: Incrémente de 1; let
+              var1 = 32; var1++; console.log(var1); Cela affichera 33. --:
+              Décrémente de 1; let var2 = 32; var2--; console.log(var2); Cela
+              affichera 31.
+            </p>
+            <h3>Concaténation et Interpolation (Variables)</h3>
+            <p>
+              Concaténation: De façon similaire à deux chaînes, il suffit
+              "d'additionner" deux variables (ne PAS mettre de quotes, sinon
+              l'ordinateur va penser que c'est une chaîne de caractère et non la
+              variable): let var1 = "Salut!"; let var2 = " Comment ça va?";
+              console.log(var1 + var2); La console affichera "Salut! Comment ça
+              va?". Interpolation: Voici une nouvelle méthode "d'additionner"
+              des chaînes de caractères. En utilisant la notation `${}`, on peut
+              interpoler une chaîne et une variable: let varInterp =
+              "interpolation"; console.log(`Voici un exemple d'\${varInterp}.`);
+              La console affichera "Voici un exemple d'interpolation." **Faire
+              attention: ce n'est pas " ni ', mais bien le "backward tick" `.
+            </p>
+            <h3>Opérateur typeof</h3>
+            <p>
+              L'opérateur typeof permet de déterminer le type de donnée que
+              stocke une variable. C'est un mot-clé qui, tout comme let et
+              const, vient avant la variable: let var1 = 812359;
+              console.log(typeof var1); var1 = "hello"; console.log(typeof
+              var1); Le premier .log affichera "number" et le deuxième affichera
+              "string".</p
+            >
+            <h3>Structure de contrôle "if, else if, else"</h3>
+            <p>
+              if: "if" prends en paramètre une condition; si la condition est
+              vraie, le code dans le "if" roulera. Sinon, le code dans le "if"
+              sera ignoré. La structure se note de façon suivante: if(){ }. Dans
+              les parenthèses () se trouve la condition. Dans les parenthèses {}
+              se trouve le code à exécuter si la condition est vraie: if(true) {
+              console.log("C'est vrai."); } if(false) { console.log("C'est
+              faux."); } La console affichera seulement "C'est vrai.", car dans
+              le deuxième "if", la condition est fausse, donc le code ne roulera
+              pas. else: "else" ne prends AUCUNE CONDITION. Le code dans la
+              structure "else" roule seulement si RIEN avant ne roule (a.k.a.
+              dans la structure "if" ou "else if"). La structure se note de
+              façon suivante: else {}. Dans les parenthèses {} se trouve le code
+              à exécuter: if(false) { console.log("Cette phrase ne sera pas
+              affichée"); } else { console.log("Voilà!"); } La console affichera
+              "Voilà!". ATTENTION! La structure else NE PEUT PAS ÊTRE PAR
+              ELLE-MÊME. Il doit exister un "if" pour avoir un "else". else if:
+              "else if" sert à ajouter une troisième ou quatrième condition à
+              une structure "if else". Il n'y pas de limite au nombre de "else
+              if" dans une structure "if else". La structure "else if" se note
+              de façon suivante: else if() {}. Dans les parenthèses () se trouve
+              la condition. Dans les parenthèses {} se trouve le code à exécuter
+              si la condition est vraie: if(false) { console.log("Ceci ne va pas
+              apparaître."); } else if(true) { console.log("Yippie!"); } else {
+              console.log("Ceci ne va pas apparaître."); } La console affichera
+              "Yippie!". ATTENTION À LA STRUCTURE: le "else if" DOIT venit AVANT
+              le "else" et APRÈS le "if".</p
+            >
+            <h3>Opérateurs de comparaison</h3>
+            <p>
+              Il existe d'autres conditions que l'on peut imposer à une
+              structure de contrôle que le "if else". Ce qui compte, c'est que
+              le "résultat" de la condition soit "vraie" ou "fausse". Ainsi, on
+              peut utiliser des opérateurs de comparaison: - >: plus grand que -
+              <: plus petit que - >=: plus grand ou égal à - <=: plus petit ou
+              égal à - ===: égal à - !==: n'est pas égal à On peut utiliser ces
+              opérateurs pour augmenter notre choix de condition: let
+              niveauDeFaim = 4; if(niveauDeFaim > 5) { console.log("Il faut
+              manger."); } else { console.log("Pas tout de suite!"); } Dans ce
+              cas-ci, puisqu'il n'est pas vrai que 4 est plus grand que 5, la
+              console affichera "Pas tout de suite!", car la condition du "if"
+              est false.</p
+            >
+            <h3>Opérateurs logiques</h3>
+            <p>
+              Les opérateurs logiques ajoutent une autre condition: la condition
+              &&, || ou !. &&: Condition "et". Il faut que la condition à gauche
+              ET à droite soient vraies pour que le code exécute. Si une seule
+              des deux est fausses, le code n'exécute PAS: let var1 = 4; let
+              var2 = 45; if(var1 === var2 && var1 < var2) { console.log("Ceci
+              est faux."); } else if(3 < 4 && 4 < 5) { console.log("Les deux
+              conditions sont vraies."); } La console affichera "Les deux
+              conditions sont vraies.", car dans le "if" seulement une des deux
+              conditions est vraie, donc le résultat est "false". ||: Condition
+              "ou". Dès que UNE des deux conditions (soit à droite ou à gauche
+              de l'opérateur) est vraie, la condition est "true" (MÊME SI une
+              des deux est fausses): let var1 = 4; let var2 = 45; if(var1 ===
+              var2 && var1 < var2) { console.log("Ceci est faux."); } else if(3
+              < 4 && 4 < 5) { console.log("Les deux conditions sont vraies."); }
+              La console affichera "Ceci est faux.", car il est "true" que var1
+              est plus petit que var2. !: Condition "inverse". L'opérateur "!"
+              inverse le résultat d'une évaluation. Par exemple, si la condition
+              était "false", elle deviendrait "true" et vice-versa: if(!false) {
+              console.log("Magie!"); } La console affichera "Magie!", car la
+              condition "false" devient "true".</p
+            >
+            <h3>Déclaration vraie et fausse</h3>
+            <p>
+              En tant que tel, certains types de données sont considérés comme
+              étant "true" et "false". Voici une liste de données qui seraient
+              "false": - Le chiffre 0. - Une chaîne vide "" ou ''. - Le mot-clé
+              "null". - Le mot-clé "undefined". - Le mot-clé "NaN" (Not a
+              Number). N'importe quelle autre donnée serait évaluée en tant que
+              "true": let var1 = "Ce n'est pas une chaîne vide."; if(var1) {
+              console.log("Il y a quelque chose."); } La console affichera "Il y
+              a quelque chose.", car la condition est "true" (chaîne
+              non-vide).</p
+            >
+            <h3>Assignation vraie et fausse</h3>
+            <p>
+              On peut utiliser une combination de la déclaration vraie et fausse
+              et de l'opérateur logique ||. En faisant court-circuit, on peut
+              assigner la valeur d'une variable dépendamment de "true" ou
+              "false". Par exemple: let couleur = "rouge"; let couleurPreferee =
+              couleur || "vert"; console.log(couleurPreferee); La console
+              affichera "rouge". Si, par contre, la variable "couleur" avait
+              comme valeur une chaîne vide, la console aurait plutôt affiché
+              "vert". C'est le principe du court-circuit; dès que l'ordinateur
+              reconnaît que la première condition, "couleur" est vraie, elle
+              arrête là et assigne "couleurPreferee" la valeur de "couleur".</p
+            >
+            <h3>Opérateur ternaire</h3>
+            <p>
+              L'opérateur ternaire ressemble beaucoup à la structure "if else".
+              L'opérateur se note de façon suivante: Condition ? true : false.
+              La condition peut être n'importe qu'elle condition qu'on a déjà
+              vu. La condition est suivie d'un point d'interrogation. Ensuite,
+              du côté gauche du " : " se trouve le code qui s'exécute si la
+              condition est vraie. Du côté droit se trouve le code qui s'exécute
+              si la condition est fausse. Ainsi, si on prend le même exemple de
+              la structure "if else": false ? console.log("Cette phrase ne sera
+              pas affichée") : console.log("Voilà!"); La console affichera
+              "Voilà!".</p
+            >
+            <h3>Déclaration de fonction</h3>
+            <p>
+              Une fonction roule le code à l'intérieur chaque fois qu'elle est
+              appelée. La fonction est notée de façon suivante: function [nom de
+              la fonction]() {}. "function" est le mot-clé qui nous indique que
+              l'on déclare une nouvelle fonction. Un peu comme "let" et "const"
+              lors de la déclaration d'une variable. [nom de la fonction] est le
+              nom attribué à la fonction. Les parenthèses () prennent comme
+              argument des variables. (plus sur cette partie plus tard).
+              Finalement, les parenthèses {} contiennent le code qui doit être
+              exécuté lorsque la fonction est appelée: function bonneFete() {
+              console.log("Bonne fête!"); } Cette fonction, lorsqu'elle est
+              appelée, affichera à la console "Bonne fête!". Pour appeler une
+              fonction, il suffit d'écrire le nom de la fonction: bonneFete();
+              Cela affichera à la console "Bonne fête!".</p
+            >
+            <h3>Paramètre de fonction</h3>
+            <p>
+              Dans les parenthèses () d'une déclaration de fonction, il est
+              possible de prendre des variables en compte, provenant du code
+              principal: function bonneFetePersonnalise(nom){ console.log("Bonne
+              fête " + nom + " !"); } bonneFetePersonnalise("Tristan"); La
+              console affichera "Bonne fête Tristan!". On voit ici que dans la
+              déclaration de fonction, on a déclaré une variable [nom], SANS
+              mot-clé. Ensuite, lors de l'appel de la fonction, il FAUT fournir
+              le bon montant de "valeurs". Par exemple, dans ce cas-ci, j'ai
+              fourni la valeur "Tristan", car il n'y avait qu'une seule variable
+              [nom]. Cas #2: Plusieurs variables; function dateDeFete(jour,
+              mois, année){ console.log("La personne est née le " + jour + " " +
+              mois + " " + année + "."); } dateDeFete(28, "janvier", 2006); La
+              console affichera "La personne est née le 28 janvier 2006". Il
+              faut donc utiliser des virgules pour séparer les variables.</p
+            >
+            <h3>Return</h3>
+            <p>
+              Pour faire une autre action qu'afficher quelque chose à la
+              console, il faut utiliser le mot-clé "return". Avec celui-ci, il
+              est possible d'évaluer un résultat, puis renvoyer ce résultat au
+              code à l'extérieur de la fonction: function
+              mutliplierParPI(nombre){ let nombreMulti = Math.PI*nombre; return
+              nombreMulti; } console.log(multiplierParPI(34)); La console
+              affichera environ 106.81415. On voit ici qu'on peut déclarer une
+              variable à l'intérieur de la fonction, puis retourner cette valeur
+              au code qui appelle. On encadre le tout par console.log pour
+              afficher le résultat.</p
             >
           </section>
         </div>
       </div>
     </article>
     <script src="editor.js"></script>
-    <dialog open>
+    <dialog id="help">
+      <form method="dialog">
+        <input type="submit" value="❌ Fermer" />
+      </form>
+      <hr />
+
       <h2>Aide</h2>
       <p>Bienvenue à la plateforme des défis débutants de BrébeufHx 8.0!</p>
+      <p id="console-help">
+        Toutes les réponses doivent être affichées à la console!
+        <br />
+        <strong
+          >L'exécution du code Python prend du temps! Soyez patients!</strong
+        >
+      </p>
       <p
         >Il y a XX défis, répartis sur 3 niveaux de difficulté. La progression
         de difficulté suivra ce modèle:</p
@@ -187,17 +492,64 @@
           concepts de base de la programmation.</li
         >
         <li>
-          L'introduction de nouveaux concepts réitérant sur ceux du niveau 1
+          L'introduction de nouveaux concepts réitérant sur ceux du niveau 1 en
+          établissant des modèles et des application à la programmation de base.
         </li>
         <li
           >Des défis qui feront appel à un raisonnement mathématique, qui
           devront être résolus avec les concepts des deux niveaux précédents.
         </li>
       </ol>
+      <h2>Soumission des résultats</h2>
+      <p id="submit-help">
+        Lorsque vous avez terminé (il n'est pas obligatoire de terminer tous les
+        défis), cliquez sur le lien
+        <strong>«&nbsp;Soumettre Rapport&nbsp;»</strong> en haut à droite.</p
+      >
+      <h2>Détails techniques</h2>
+      <p>Merci de:</p>
+      <ul>
+        <li>Utiliser un seul navigateur pour conserver vos résultats</li>
+        <li>Ne pas effacer les cookies ou les données de sites web</li>
+        <li>Ne pas utiliser un mode de navigation privée</li>
+      </ul>
       <h2>Bonne chance!!!</h2>
+      <aside style="font-size: small; font-style: italic">
+        P.S. Vous pouvez consulter ces instructions n'importe quand en cliquant
+        sur le lien «&nbsp;Aide&nbsp;» en haut à droite.
+      </aside>
+    </dialog>
+    <dialog id="report">
+      <form method="dialog">
+        <input type="submit" value="❌ Fermer" autofocus />
+      </form>
+      <hr />
+      <h2>Rapport</h2>
+      <h3>Étapes</h3>
+      <ol>
+        <li>Copier le rapport<textarea id="report-textarea"></textarea></li>
+        <li
+          >Ouvrir ce
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfGX6N5XwsdwVrd_pD6_8FGQszLU6B3maBZM6XPvLlcxCShIw/viewform?usp=dialog"
+            target="_blank"
+            >Google Forms</a
+          ></li
+        >
+        <li>Coller le rapport dans le Google Forms</li>
+      </ol>
+    </dialog>
+    <dialog id="about">
       <form method="dialog">
         <input type="submit" value="❌ Fermer" />
       </form>
+      <hr />
+      <h2>À propos</h2>
+      <p
+        >Construit avec Pyodide et CodeMirror 6. Polices Arimo et Contrail One
+        de Google Fonts.</p
+      >
+      <p>Merci!</p>
     </dialog>
   </body>
 </html>

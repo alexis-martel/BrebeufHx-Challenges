@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Report Viewer</title>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <h1>Report Viewer</h1>
+    <h2>Internal</h2>
+    <form id="form">
+      <textarea id="textarea" placeholder="Paste report here"></textarea>
+      <input type="submit" value="View" />
+    </form>
+    <output id="report"></output>
+    <script>
+      document.getElementById("form").onsubmit = (e) => {
+        e.preventDefault();
+        document.getElementById("report").textContent = atob(
+          document
+            .getElementById("textarea")
+            .value.replace("-----BEGIN REPORT-----", "")
+            .replace("-----END REPORT-----", "")
+        );
+      };
+    </script>
+  </body>
+</html>
