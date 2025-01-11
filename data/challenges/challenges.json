@@ -20,7 +20,7 @@
       "prompts": [
         "Dans la programmation, on peut utiliser le signe + pour autre chose que des nombres. On peut aussi l’utiliser pour coller des mots ensemble. C’est ce qu’on appelle la concaténation.Voici votre mission : écrivez un programme qui \"colle\" ensemble les mots suivants pour former des phrases expressions.- Collez \"Hello\" et \"World!\".- Collez \"Un\", \"Deux\", et \"Trois\"."
       ],
-      "answers": ["HelloWorldUnDeuxTrois"]
+      "answers": ["HelloWorld!UnDeuxTrois"]
     },
     {
       "prompts": [
