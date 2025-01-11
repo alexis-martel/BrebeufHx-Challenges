@@ -92,6 +92,18 @@ function populate(data) {
     languageMode = localStorage.getItem("lang-mode");
   }
   let progress = JSON.parse(localStorage.getItem("progress-model"));
+  // Check wether all challenges are solved
+  let allTrue = true;
+  for (let chal in progress["L1"]
+    .concat(progress["L2"])
+    .concat(progress["L3"])) {
+    if (!chal["solved"]) {
+      allTrue = false;
+    }
+  }
+  if (allTrue) {
+    alert("Bravo! Tout est complet! Soumettez votre rapport!");
+  }
   // Set answer
   answer =
     data[levelName][challengeIndex]["answers"][
