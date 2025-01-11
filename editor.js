@@ -23,7 +23,7 @@ let answer;
 let jsonData;
 
 // Populate interface
-fetchJSON(document.baseURI + "data/challenges/challenges.json?v=3").then(
+fetchJSON(document.baseURI + "data/challenges/challenges.json?v=4").then(
   (data) => {
     populate(data);
   }
