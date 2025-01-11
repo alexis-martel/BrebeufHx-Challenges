@@ -23,9 +23,11 @@ let answer;
 let jsonData;
 
 // Populate interface
-fetchJSON(document.baseURI + "data/challenges/challenges.json").then((data) => {
-  populate(data);
-});
+fetchJSON(document.baseURI + "data/challenges/challenges.json?v=2").then(
+  (data) => {
+    populate(data);
+  }
+);
 
 function populate(data) {
   jsonData = data;
