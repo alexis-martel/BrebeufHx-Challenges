@@ -78,7 +78,7 @@
         "Emma a une grande collection de livres. Elle n’arrive jamais à trouver celui qu’elle cherche dans sa bibliothèque, dont les contenus sont représentés ici:<br>Le Rouge et le Noir (332), Slaughterhouse-Five (1213), Du côté de chez Swann (432), Silent Spring (387), Sartre et l'existence (872), Dune (345), Nineteen Eighty-Four (554), Souvenir d'enfance (767), The Grapes of Wrath (542), Dracula (431), The Bell Jar (531)<br>Ordonnez les livres en ordre alphabétique. Notez que les déterminants (dans ce cas-ci, “A”, “An”, “The”, “Le”, “La”,  “L’”) et les espaces ne doivent pas être considérés dans l’ordre alphabétique. Affichez la somme du premier et dernier nombre de pages à la console.",
         "Emma a une grande collection de livres. Elle n’arrive jamais à trouver celui qu’elle cherche dans sa bibliothèque, dont les contenus sont représentés ici:<br>La Peste (232), The Trial (234), Le Petit Prince (545), The Catcher in the Rye (987), Les Fleurs du mal (231), The Road (223), Les Misérables (315), To Kill a Mockingbird (345), The Grapes of Wrath (342), Le Rouge et le Noir (342), The Hobbit (214),  L'Étranger (35)<br>Ordonnez les livres en ordre alphabétique. Notez que les déterminants (dans ce cas-ci, “A”, “An”, “The”, “Le”, “La”,  “L’”) et les espaces ne doivent pas être considérés dans l’ordre alphabétique. Affichez la somme du premier et dernier nombre de pages à la console."
       ],
-      "answers": ["684", "1207", "1221"]
+      "answers": ["684", "1298", "1221"]
     },
     {
       "prompts": [
