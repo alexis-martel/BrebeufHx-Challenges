@@ -8,19 +8,19 @@
       "prompts": [
         "Vous êtes responsable de la classification des informations des personnes qui postulent pour rejoindre le Code Club, un cercle de programmeurs talentueux. Voici l'introduction d'un des candidats :<br>\"Bonjour ! Je m'appelle Yang Jeongin et j'ai 23 ans. Je code depuis un an et demi et je ne suis pas un citoyen canadien.\"<br>En utilisez la méthode d'affichage de la langue de programmation que vous avez choisie, affichez les informations suivantes pour ce candidat :<br>- Son âge (sous forme d’entier, en années)<br>- Son nom complet<br>- Depuis combien de temps il code (sous forme de nombre décimal, en années)<br>- S'il est un citoyen canadien ou non (sous forme de booléen)<br>Veuillez mettre une information par ligne."
       ],
-      "answers": ["23\nYang Jeongin\n1.5\nfalse"]
+      "answers": ["23Yang Jeongin1.5false"]
     },
     {
       "prompts": [
-        "Une des bases très importantes de n’importe quel langage de programmation, c’est les opérations mathématiques de bases: + (addition), - (soustraction), * (multiplication), / (division) et % (modulo, c'est-à-dire le reste après la division).\nAffichez le résultat des opérations suivantes:\n- 1 + 2\n- 133.76 - 29\n- 48 * 39\n- 59 / 13\n- Le résultat de 5939 modulo 17\n- -7147.714285714285\nVeuillez mettre une information par ligne."
+        "Une des bases très importantes de n’importe quel langage de programmation, c’est les opérations mathématiques de bases: + (addition), - (soustraction), * (multiplication), / (division) et % (modulo, c'est-à-dire le reste après la division).Affichez le résultat des opérations suivantes:- 1 + 2- 133.76 - 29- 48 * 39- 59 / 13- Le résultat de 5939 modulo 17- -7147.714285714285Veuillez mettre une information par ligne."
       ],
-      "answers": ["3\n104.76\n1872\n4.538461538461538\n4\n-7147.714285714285"]
+      "answers": ["3104.7618724.5384615384615384-7147.714285714285"]
     },
     {
       "prompts": [
-        "Dans la programmation, on peut utiliser le signe + pour autre chose que des nombres. On peut aussi l’utiliser pour coller des mots ensemble. C’est ce qu’on appelle la concaténation.\nVoici votre mission : écrivez un programme qui \"colle\" ensemble les mots suivants pour former des phrases \nexpressions.\n- Collez \"Hello\" et \"World!\".\n- Collez \"Un\", \"Deux\", et \"Trois\"."
+        "Dans la programmation, on peut utiliser le signe + pour autre chose que des nombres. On peut aussi l’utiliser pour coller des mots ensemble. C’est ce qu’on appelle la concaténation.Voici votre mission : écrivez un programme qui \"colle\" ensemble les mots suivants pour former des phrases expressions.- Collez \"Hello\" et \"World!\".- Collez \"Un\", \"Deux\", et \"Trois\"."
       ],
-      "answers": ["HelloWorld\nUnDeuxTrois"]
+      "answers": ["HelloWorldUnDeuxTrois"]
     },
     {
       "prompts": [
