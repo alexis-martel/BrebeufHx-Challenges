@@ -2,6 +2,8 @@
 
 > Programming challenge platform with support for Python and JavaScript - No backend required!
 
+This platform was used by dozens of hackers during BrébeufHx 8.0 (2025)!
+
 ## How to deploy
 
 Find a static web server somewhere and you're good to go!
